@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  shell:
+    name: Shell steps
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Syntax check
+        run: |
+          for f in config.sh scripts/*.sh tests/*.sh; do bash -n "$f"; done
+      - name: ShellCheck
+        run: shellcheck -x config.sh scripts/*.sh tests/*.sh
+      - name: Stubbed end-to-end test (paths with spaces, skip logic, failure handling)
+        run: bash tests/test_shell_steps.sh
+
+  r-analysis:
+    name: DESeq2 step on synthetic data
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-version: latest
+          channels: conda-forge,bioconda
+          channel-priority: strict
+          environment-file: tests/ci_environment.yml
+          activate-environment: ci
+      - name: Run R tests
+        run: Rscript -e 'testthat::test_file("tests/testthat/test-deseq2.R", stop_on_failure = TRUE)'

@@ -1,0 +1,11 @@
+# Light environment used by CI to test the R analysis step (no aligners needed)
+name: ci
+channels: [conda-forge, bioconda]
+dependencies:
+  - r-base>=4.3
+  - bioconductor-deseq2
+  - bioconductor-apeglm
+  - bioconductor-enhancedvolcano
+  - bioconductor-fgsea
+  - r-tidyverse
+  - r-testthat

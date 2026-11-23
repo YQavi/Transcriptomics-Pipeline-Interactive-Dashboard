@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this pipeline or dashboard, please cite it as below."
+title: "Bulk RNA-seq of cancer associated fibroblasts in cervical cancer: pipeline and interactive dashboard"
+authors:
+  - family-names: Qavi
+    given-names: Yusuf
+    affiliation: "Georgetown University"
+repository-code: "https://github.com/YQavi/bulk-rnaseq-cervical-caf"
+license: MIT
+version: 0.1.0
+date-released: 2026-11-12
+keywords:
+  - RNA-seq
+  - differential expression
+  - DESeq2
+  - R Shiny
+  - cancer-associated fibroblasts
+  - cervical cancer

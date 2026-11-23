@@ -1,0 +1,3 @@
+CAF_general_markers	Illustrative marker set, verify against primary literature	ACTA2	FAP	PDGFRB	PDGFRA	COL1A1	COL1A2	COL3A1	DCN	LUM	THY1	PDPN	VIM	S100A4	FN1
+myCAF_like_contractile	Illustrative myofibroblast-like set, verify against primary literature	ACTA2	TAGLN	MYL9	TPM1	TPM2	MMP11	POSTN	CTHRC1	COL1A1	COL12A1	LRRC15
+iCAF_like_inflammatory	Illustrative inflammatory-like set, verify against primary literature	IL6	CXCL1	CXCL2	CXCL12	CCL2	LIF	CFD	HAS1	IL11	PDGFRA

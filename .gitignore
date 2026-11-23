@@ -1,0 +1,32 @@
+# generated outputs (regenerate with the pipeline)
+/results/
+app/rsconnect/
+
+# data folders, if DATA_DIR is set inside the repo
+/data/
+clean_fastq/
+aligned_bam/
+reports/
+gene_counts.txt*
+hisat2_index/
+annotation/
+
+# large or binary files that should never be committed
+*.bam
+*.bai
+*.sam
+*.sra
+*.fastq
+*.fastq.gz
+*.fq.gz
+
+# R / OS / editor
+.Rhistory
+.RData
+.Rproj.user/
+renv/library/
+.DS_Store
+*.swp
+
+# keep the small slim object that powers the hosted dashboard
+!app/data/demo_deseq2_data.RData

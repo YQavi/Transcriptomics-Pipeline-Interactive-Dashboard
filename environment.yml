@@ -1,0 +1,27 @@
+# conda env create -f environment.yml      (create it in your normal conda location, not inside the repo)
+# Apple Silicon: if a package has no osx-arm64 build, run:  CONDA_SUBDIR=osx-64 conda env create -f environment.yml
+name: txnomics
+channels: [conda-forge, bioconda, defaults]
+dependencies:
+  # command-line steps
+  - sra-tools
+  - fastp
+  - hisat2
+  - samtools
+  - subread            # featureCounts
+  # R analysis
+  - r-base>=4.3
+  - bioconductor-deseq2
+  - bioconductor-apeglm
+  - bioconductor-enhancedvolcano
+  - bioconductor-fgsea
+  - bioconductor-org.hs.eg.db   # human; swap for bioconductor-org.mm.eg.db for mouse
+  - r-msigdbr
+  - r-tidyverse
+  # dashboard
+  - r-shiny
+  - r-bslib
+  - r-plotly
+  - r-dt
+  - r-pheatmap
+  - r-rcolorbrewer
