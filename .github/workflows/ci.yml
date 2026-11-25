@@ -15,7 +15,7 @@ jobs:
         run: |
           for f in config.sh scripts/*.sh tests/*.sh; do bash -n "$f"; done
       - name: ShellCheck
-        run: shellcheck -x config.sh scripts/*.sh tests/*.sh
+        run: shellcheck config.sh scripts/*.sh tests/*.sh
       - name: Stubbed end-to-end test (paths with spaces, skip logic, failure handling)
         run: bash tests/test_shell_steps.sh
 
