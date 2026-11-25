@@ -5,7 +5,7 @@
 
 An end to end bulk RNA-seq project, from raw SRA reads to an interactive R Shiny dashboard, built on public dataset **GSE347724** (cancer associated fibroblasts, CAFs, from late stage vs early stage FIGO cervical cancer). The pipeline is a set of numbered scripts, one per step, that runs on a single laptop and is configured through one settings file and one sample sheet so it can be reused on other datasets.
 
-> **Live dashboard:** `<add shinyapps.io or Posit Connect link here>`
+> **Live dashboard:** `<https://yqavi.shinyapps.io/cervical-caf-rnaseq-dashboard/>`
 > **Author:** Yusuf Qavi, M.S. Bioinformatics, Georgetown University
 
 <!-- TODO: add a 10 second GIF of the click-to-boxplot interaction at docs/img/dashboard_demo.gif -->
