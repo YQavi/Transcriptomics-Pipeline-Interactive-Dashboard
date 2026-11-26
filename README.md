@@ -98,25 +98,6 @@ The design has one late stage and two early stage samples, so the statistical th
 - **Calibration is tested.** The automated tests check, on simulated data, that fold changes have the right direction, that strong effects are detected, and that about 5% of null genes have p < 0.05.
 - **Multiple testing is visible.** The dashboard shows the number of genes expected to pass the cutoff by chance and a p-value histogram.
 
-## Interpreting the results
-
-**Dataset:** three samples, one late stage CAF sample versus two early stage CAF samples, with no associated publication to cross check against. The results should be read with that in mind.
-
-**How to read each view**
-- **PCA / distance heatmap:** Do the two early stage samples sit closer to each other than to the late stage sample? If not, the stage label is not the dominant source of variation and gene level results deserve extra suspicion.
-- **Volcano plot:** The x axis is the shrunken log2 fold change (late vs early). The y axis is -log10 of the p-value. Genes far to the left or right and high up show both a large and a consistent difference.
-- **Gene boxplot:** With one late stage sample, the late stage "box" is a single point. Use it to see whether a gene's difference is large relative to the spread between the two early samples.
-
-**What the data can support**
-1. **It is a pilot, not a finding.** With one late stage sample, the variability of that group cannot be estimated, so p-values tend to be optimistic. Rank genes by effect size and treat any cutoff as a way to build a hypothesis list.
-2. **Stage is confounded with the individual.** Each group is probably one patient's cells, so a difference may reflect patient, passage or preparation rather than stage.
-3. **Expect few significant genes after multiple testing correction.** Adjusted p-values are reported, but the dashboard defaults to raw p-values for exploration.
-4. **Use pathway level analysis.** Gene set enrichment on the ranked statistics is more stable than lists of single genes.
-5. **Sanity check biology.** Confirm that fibroblast and CAF markers (for example *ACTA2*, *FAP*, *PDGFRB*, *COL1A1*) are expressed as expected.
-6. **Do not merge in normal tissue counts.** Bulk normal cervix is mostly non fibroblast cells, and merging a separate study confounds condition with batch. A better anchor is a gene set level comparison against an independent CAF vs normal fibroblast signature.
-
-Stating these limits clearly is part of the analysis, not a disclaimer on it.
-
 ## Working within hardware limits
 
 This was developed on an Apple M1 laptop with the project stored on an external drive. The pipeline contains several deliberate workarounds that generalize to any resource limited setup.
